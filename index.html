@@ -4,6 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>굿독아카데미</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- fullpage.js swiper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.6/swiper-bundle.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.6/swiper-bundle.min.js"
+    ></script>
     <!-- 'Spoqa Han Sans Neo' -->
     <link
       href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
@@ -21,93 +43,109 @@
   <body>
     <!-- 헤더 -->
     <header id="header">
-      <a class="logo" href="index.html">
-        <img src="img/logo_h.svg" alt="logo" />
-      </a>
-      <nav class="menu">
-        <div class="progress-bar"></div>
-        <ul class="navi">
-          <li><a href="#welcome">Welcome</a></li>
-          <li><a href="#aboutUs">About us</a></li>
-          <li><a href="#programs">Programs</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <div class="headerWrapper">
+        <a class="logo" href="index.html">
+          <img src="img/logo_h.svg" alt="logo" />
+        </a>
+        <nav class="menu">
+          <div class="progress-bar"></div>
+          <ul id="menu" class="navi">
+            <li><a href="#welcome">Welcome</a></li>
+            <li><a href="#aboutUs">About us</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <ul class="sns">
+          <li>
+            <a href="javascript:void(0);"
+              ><img src="img/instagram.svg" alt="instagram"
+            /></a>
+          </li>
+          <li>
+            <a href="javascript:void(0);"
+              ><img src="img/youtube.svg" alt="youtube"
+            /></a>
+          </li>
         </ul>
-      </nav>
-      <ul class="sns">
-        <li>
-          <a href="javascript:void(0);"
-            ><img src="img/instagram.svg" alt="instagram"
-          /></a>
-        </li>
-        <li>
-          <a href="javascript:void(0);"
-            ><img src="img/youtube.svg" alt="youtube"
-          /></a>
-        </li>
-      </ul>
-    </header>
-    <!-- 스크롤하라고 빙글빙글 뚝뚝 -->
-    <div class="scrollIndicator">
-      <div class="scrollText">SCROLL</div>
-      <div class="circle"></div>
-      <div class="line"></div>
-    </div>
-    <!-- Welcome -->
-    <article id="welcome">
-      <div class="heroContainer">
-        <div class="heroContent">
-          <h1>행복한 반려 생활을 위한 전문 솔루션</h1>
-          <p>너와 나, 함께 성장하는 삶으로의 동행</p>
-          <button class="btn">굿독과 함께하기</button>
-        </div>
       </div>
-    </article>
-    <!-- About us -->
-    <article id="aboutUs">
+    </header>
+    <!-- 풀페이지 -->
+    <div id="fullpage">
+      <!-- Welcome -->
+      <article
+        id="section-welcome"
+        class="section sec1 active"
+        data-anchor="welcome"
+      >
+        <div class="heroContainer">
+          <div class="heroContent">
+            <h1>행복한 반려 생활을 위한 전문 솔루션</h1>
+            <p>너와 나, 함께 성장하는 삶으로의 동행</p>
+            <button class="btn">굿독과 함께하기</button>
+          </div>
+        </div>
+        <!-- 스크롤하라고 빙글빙글 뚝뚝 -->
+        <div class="scrollIndicator">
+          <div class="scrollText">SCROLL</div>
+          <div class="circle"></div>
+          <div class="line"></div>
+        </div>
+      </article>
+      <!-- About us -->
+
       <!-- 굿독 이야기 -->
-      <div id="gooddogStory">
-        <div class="splitContainer">
-          <!-- margin-left가 마이너스로 (우에서 좌) -->
-          <div class="topContent">
-            <div class="text-item">굿독 이야기</div>
-            <div class="text-item">
+      <div
+        id="section-aboutUs"
+        class="section sec2"
+        data-anchor="aboutUs"
+        data-swiper-scroll="true"
+      >
+        <!-- margin-left가 마이너스로 (우에서 좌) -->
+        <div class="swiper-container topSwiper" id="topSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">굿독 이야기</div>
+            <div class="swiper-slide">
               길 잃은 작은 강아지와 어릴적에 마주한 순간, 하나의 질문이
               떠올랐습니다.
             </div>
-            <div class="text-item">
+            <div class="swiper-slide">
               ‘과연 이 아이와 나는 어떻게 서로를 이해하고 함께 살아갈 수
               있을까?’
             </div>
-            <div class="text-item">
+            <div class="swiper-slide">
               그 질문에서 비롯된 수많은 고민과 연구들...
             </div>
-            <div class="text-item">
+            <div class="swiper-slide">
               그리고 만들어진 굿독 아카데미는,<br />반려견과 보호자가 평생
               친구이자 가족으로 함께하기 위해 꼭 필요한 ‘소통’을 가르칩니다.
             </div>
           </div>
-          <!-- margin-left가 플러스로 (좌에서 우) -->
-          <div class="bottomContent">
-            <div class="image-item">
+        </div>
+
+        <!-- margin-left가 플러스로 (좌에서 우) -->
+        <div class="swiper-container bottomSwiper" id="bottomSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
               <img src="img/story7.png" alt="story 5" />
             </div>
-            <div class="image-item">
+            <div class="swiper-slide">
               <img src="img/story456.png" alt="story 4" />
             </div>
-            <div class="image-item">
+            <div class="swiper-slide">
               <img src="img/story3.png" alt="story 3" />
             </div>
-            <div class="image-item">
+            <div class="swiper-slide">
               <img src="img/story2.png" alt="story 2" />
             </div>
-            <div class="image-item">
+            <div class="swiper-slide">
               <img src="img/story1.png" alt="story 1" />
             </div>
           </div>
         </div>
       </div>
       <!-- 굿독의 3대 가치  -->
-      <div id="values">
+      <div id="values" class="section sec3">
         <h2>
           올바른 반려문화 교육이<br />사람과 동물 모두의 삶을 풍요롭게 합니다
         </h2>
@@ -155,7 +193,7 @@
         </div>
       </div>
       <!-- 굿독의 닥터들 -->
-      <div id="doctors">
+      <div id="doctors" class="section sec4">
         <h2>굿독의 검증된 굿닥터들</h2>
         <p>
           반려동물 행동학 전문가와 수의학 전문가의 협업으로 만들어 낸 굿독만의
@@ -224,12 +262,198 @@
           </div>
         </div>
       </div>
-    </article>
-    <!-- Programs -->
-    <article id="programs"></article>
-    <!-- Contact -->
-    <article id="contact"></article>
-    <!-- 푸터 -->
-    <footer id="footer"></footer>
+
+      <!-- Programs -->
+      <article
+        id="section-programs"
+        class="section sec5"
+        data-anchor="programs"
+      >
+        <aside class="progrmasTitle">
+          <h2>교육<br />프로그램<br />소개</h2>
+          <p>
+            굿독이 설계하고<br />직접 진행하는<br />트레이닝 프로그램은<br />견주와
+            반려견이<br />함께 성장하고 변화하는<br />특별한 경험을<br />고객에게
+            선사합니다.
+          </p>
+        </aside>
+        <div class="programsContainer">
+          <div class="programsList">
+            <div class="programDetail p1">
+              <div class="programDarker">
+                <h2>(1) 입문 프로그램: 퍼피 스텝</h2>
+                <ul>
+                  <li>대상: 생후 2~6개월 자견과 초보 견주</li>
+                  <li>
+                    내용: 사회화 훈련, 올바른 배변·식습관 형성, 산책 매너, 기본
+                    복종 훈련
+                  </li>
+                  <li>
+                    특징: 짧은 이론 강의 후 즉각적인 실습, 보호자와 강아지의
+                    눈높이에 맞춘 체험 수업
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="programDetail p2">
+              <div class="programDarker">
+                <h2>(2) 문제행동 교정 프로그램: 행동 클리닉</h2>
+                <ul>
+                  <li>
+                    대상: 짖음, 분리불안, 공격성 등 특정 문제행동을 겪는 반려견
+                  </li>
+                  <li>
+                    내용: 1:1 행동 진단 → 맞춤형 교정 훈련 → 진행 상황에 따른
+                    상담 및 피드백
+                  </li>
+                  <li>
+                    특징: 수의사, 동물 행동 전문가가 함께 팀을 이뤄 근본 원인
+                    파악 후 솔루션 제시
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="programDetail p3">
+              <div class="programDarker">
+                <h2>(3) 라이프스타일 맞춤 교육: 굿독 라이프</h2>
+                <ul>
+                  <li>
+                    대상: 반려견과의 일상을 좀 더 풍요롭게 꾸리고 싶은 견주
+                  </li>
+                  <li>
+                    내용: 산책 코스 기획 &amp; 바디랭귀지 분석/ 집 안 환경
+                    세팅(켄넬, 사료 배치 등)/ 놀이 기반 훈련
+                  </li>
+                  <li>
+                    특징: 각 가정 상황에 맞게 보호자가 쉽게 적용할 수 있는 실습
+                    위주
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="programDetail p4">
+              <div class="programDarker">
+                <h2>(4) 스페셜 클래스: 액티비티 &amp; 스포츠</h2>
+                <ul>
+                  <li>
+                    대상: 기본 복종 훈련을 완료하고, 추가 액티비티를 원하는
+                    반려견
+                  </li>
+                  <li>
+                    내용: 어질리티(Agillity), 프리스비, 플라이볼 등 기초
+                    기술부터 대회 준비까지
+                  </li>
+                  <li>
+                    특징: 주 1회 그룹 레슨 진행, 주차별 성과와 교정 포인트
+                    피드백 제공
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="programDetail p5">
+              <div class="programDarker">
+                <h2>(5) 온라인 세미나 &amp; 1:1 컨설팅</h2>
+                <ul>
+                  <li>
+                    대상: 지역적 제약으로 방문 교육이 어려운 견주, 추가 지도가
+                    필요한 반려견
+                  </li>
+                  <li>
+                    내용: 실시간 화상 레슨, SNS/커뮤니티를 통한 Q&amp;A 및 훈련
+                    영상 피드백
+                  </li>
+                  <li>
+                    특징: 시간·장소 제약 없이 진행 가능, 교육 이수 후에도 꾸준한
+                    지원
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- Contact -->
+      <article id="section-contact" class="section sec6" data-anchor="contact">
+        <!-- 고객문의 -->
+        <div class="customerContact">
+          <div class="contactWrapper">
+            <div class="contactInfo">
+              <h2>굿독에게 물어보세요</h2>
+              <p>
+                교육 문의부터 굿독에 관해 궁금하신 사항까지,<br />굿독의 소통
+                창구는 24시간 열려 있습니다.
+              </p>
+              <div class="contactAddress">굿독 고객센터: 070-1212-2323</div>
+              <div class="contactAddress">info@gooddogac.com</div>
+              <div class="contactAddress">연중무휴 24시간 상담 가능</div>
+            </div>
+            <div class="contactForm">
+              <form
+                name="contactForm"
+                action="javascript:void(0);"
+                method="post"
+              >
+                <input name="name" type="text" placeholder="이름" />
+                <input
+                  name="tel"
+                  type="number"
+                  placeholder="휴대폰 번호 11자리 입력 (- 제외)"
+                />
+                <input
+                  name="email"
+                  type="text"
+                  placeholder="이메일 주소 입력 (example@email.com)"
+                />
+                <input
+                  name="detail"
+                  type="text"
+                  placeholder="문의 내용 상세 입력"
+                />
+                <input
+                  id="personalAgreed"
+                  name="personalAgreed"
+                  type="checkbox"
+                />
+                <label for="personalAgreed"
+                  ><a href="javascript:void(0);">개인정보 수집/이용</a>
+                  동의</label
+                >
+                <button class="btn" type="submit">문의하기</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 파트너문의 -->
+      <div class="section sec7">
+        <div class="partnerContact">
+          <div class="partnerContactInfo">
+            <h2>굿독 파트너를 모집합니다</h2>
+            <p>
+              반려가족에게 더 큰 행복을 전할 수 있도록<br />굿독과 함께 성장할
+              파트너를 찾습니다.
+            </p>
+          </div>
+          <div class="application">
+            <button class="btn ghost">지원하기</button>
+          </div>
+        </div>
+        <!-- 푸터 -->
+        <footer id="footer">
+          <div class="footerLeft">
+            <h1 class="logoB"><img src="img/logo_b.svg" alt="logo" /></h1>
+            <div class="copy">&copy; 2025 Good Drs. All rights reserved</div>
+          </div>
+          <div class="footerRight">
+            <p>사업자등록번호: 123-45-67890</p>
+            <p>주소: 서울특별시 강남구 테헤란로 123, 5층 (주식회사 굿닥터스)</p>
+          </div>
+        </footer>
+      </div>
+      <!-- 풀페이지 끝 -->
+    </div>
+
+    <script src="js/script.js"></script>
   </body>
 </html>

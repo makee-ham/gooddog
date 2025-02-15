@@ -1,0 +1,277 @@
+/* 폰트 */
+@font-face {
+  font-family: Moneygraphy;
+  src: url("../fonts/Moneygraphy-Rounded.otf") format("truetype");
+}
+@font-face {
+  font-family: "온글잎 위씨리스트";
+  src: url("../fonts/Ownglyph-wiseelist.ttf") format("truetype");
+}
+/* 풀페이지 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* fullpage.js용 */
+}
+#fullpage {
+  width: 100%;
+  height: 100%;
+}
+.section {
+  height: 100vh;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+}
+
+/* 공통 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: #333;
+  font-family: Pretendard, sans-serif;
+  text-decoration: none;
+}
+body {
+  color: #333;
+  font-family: Pretendard, sans-serif;
+}
+h2 {
+  font-family: Moneygraphy, sans-serif;
+  color: #1e2a38;
+}
+/* 헤더 */
+#header {
+  width: 100vw;
+  min-width: 1920px;
+  height: 100px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+header .headerWrapper {
+  width: 1434px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+}
+header .logo {
+  position: absolute;
+  margin-left: -23px;
+}
+header .menu .progress-bar {
+  width: 540px;
+  height: 60px;
+  border-radius: 30px;
+  border: 1px solid #1e2a38;
+  /* background-color: #b8e0f9; */
+  position: absolute;
+  top: 22px;
+  left: 440px;
+}
+header .menu .navi {
+  width: 511px;
+  height: 60px;
+  position: absolute;
+  top: 22px;
+  left: 455px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header .menu .navi li:after {
+  content: "";
+  border-right: 1px solid #1e2a38;
+  margin-left: 24px;
+}
+header .menu .navi li:last-of-type:after {
+  content: "";
+  margin-left: 0;
+  display: none;
+}
+header .menu .navi a {
+  font-size: 20px;
+}
+header .sns {
+  position: absolute;
+  top: 37px;
+  right: 16px;
+}
+header .sns li {
+  float: left;
+  margin-left: 16px;
+}
+/* Welcome(히어로 섹션) */
+#section-welcome {
+  width: 100vw;
+  min-width: 1920px;
+  height: 100vh;
+  background: url("../img/heroOriginal.jpg") no-repeat center center;
+  background-size: cover;
+}
+#section-welcome .heroContainer {
+  width: 1920px;
+  height: 1080px;
+  margin: 0 auto;
+  position: relative;
+}
+#section-welcome .heroContainer .heroContent {
+  width: 680px;
+  height: 460px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 320px;
+  left: 120px;
+  padding: 64px 152px 64px 64px;
+}
+#section-welcome .heroContainer .heroContent h1 {
+  font-family: Pretendard, sans-serif;
+  line-height: 160%;
+  color: #fff;
+  font-size: 48px;
+}
+#section-welcome .heroContainer .heroContent p {
+  font-family: Pretendard, sans-serif;
+  line-height: 160%;
+  color: #fff;
+  font-size: 32px;
+  font-weight: regular;
+  margin-top: 16px;
+  margin-bottom: 51px;
+}
+/* btn 공통 생김새 */
+.btn {
+  font-family: Pretendard, sans-serif;
+  line-height: 160%;
+  color: #1e2a38;
+  font-size: 24px;
+  font-weight: bold;
+  width: 200px;
+  height: 60px;
+  border-radius: 6px;
+  background-color: #b8e0f9;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+.btn:active,
+.btn:hover {
+  background-color: #1e2a38;
+  color: #fff;
+  cursor: pointer;
+}
+/* 스크롤 유도가 빙글빙글 */
+.scrollIndicator {
+  position: absolute;
+  top: 800px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 100;
+}
+.scrollIndicator .scrollText {
+  font-family: Pretendard, sans-serif;
+  color: #b8e0f9;
+  font-size: 24px;
+  font-weight: 200;
+}
+.scrollIndicator .circle {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #b8e0f9;
+  border-radius: 50%;
+  animation: rotate 4s linear infinite;
+}
+.scrollIndicator .line {
+  width: 2px;
+  height: 200px;
+  background: #b8e0f9;
+  margin-top: -40px;
+  animation: draw 1.5s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes draw {
+  0%,
+  20% {
+    height: 0;
+    opacity: 0;
+  }
+  50% {
+    height: 100px;
+    opacity: 1;
+  }
+  100% {
+    height: 200px;
+    opacity: 0;
+  }
+}
+/* About us */
+/* 굿독 이야기 */
+#section-aboutUs {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+.topSwiper,
+.bottomSwiper {
+  overflow: hidden; /* 내부 스크롤 방지 */
+  height: 50%; /* 각 Swiper가 정확히 50% 차지 */
+  width: 100%;
+}
+.topSwiper .swiper-wrapper,
+.bottomSwiper .swiper-wrapper {
+  height: 100%;
+  width: 500vw;
+  display: flex;
+  justify-content: center; /* 슬라이드 중앙 정렬 */
+  align-items: center;
+}
+.topSwiper .swiper-slide {
+  width: 100vw;
+  height: 100%;
+  font-family: "온글잎 위씨리스트", serif;
+  font-size: 48px;
+  text-align: center;
+  line-height: 160%;
+}
+.bottomSwiper .swiper-slide img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto auto auto;
+  object-fit: contain;
+}
