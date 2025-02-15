@@ -17,11 +17,12 @@ body {
   overflow: hidden; /* fullpage.js용 */
 }
 #fullpage {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 .section {
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 .swiper-container {
   width: 100%;
@@ -57,11 +58,11 @@ body {
 h2 {
   font-family: Moneygraphy, sans-serif;
   color: #1e2a38;
+  font-weight: 400;
 }
 /* 헤더 */
 #header {
   width: 100vw;
-  min-width: 1920px;
   height: 100px;
   background-color: #fff;
   position: fixed;
@@ -124,14 +125,13 @@ header .sns li {
 /* Welcome(히어로 섹션) */
 #section-welcome {
   width: 100vw;
-  min-width: 1920px;
   height: 100vh;
-  background: url("../img/heroOriginal.jpg") no-repeat center center;
+  background: url("../img/heroImg.png") no-repeat center center;
   background-size: cover;
 }
 #section-welcome .heroContainer {
-  width: 1920px;
-  height: 1080px;
+  width: 100%;
+  height: 100vh;
   margin: 0 auto;
   position: relative;
 }
@@ -185,7 +185,7 @@ header .sns li {
 /* 스크롤 유도가 빙글빙글 */
 .scrollIndicator {
   position: absolute;
-  top: 800px;
+  top: 700px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -274,4 +274,112 @@ header .sns li {
   max-height: 90%;
   margin: auto auto auto;
   object-fit: contain;
+}
+/* 굿독의 3대 가치 */
+#values {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#values h2 {
+  font-size: 64px;
+  text-align: center;
+  line-height: 160%;
+  font-weight: 400;
+  margin-top: 100px;
+  margin-bottom: 36px;
+}
+#values .valuesSubtitle {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.valuesBG {
+  width: 1735px;
+  height: 340px;
+  background: url(../img/values.png) no-repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 138px;
+}
+.valuesDetail {
+  width: 414px;
+  height: 275px;
+}
+.valuesDetail h3 {
+  text-align: center;
+  font-family: Moneygraphy, sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  letter-spacing: 10%;
+  margin-top: 16px;
+}
+.valuesDetail p {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+.valuesDetail ul {
+  padding-left: 16px;
+}
+.valuesDetail li {
+  font-size: 20px;
+}
+.valuesDetail li:before {
+  content: "·";
+  font-size: 30px;
+  display: inline-block;
+}
+/* 굿독의 닥터들 */
+#doctors {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#doctors h2 {
+  font-size: 64px;
+  text-align: center;
+  line-height: 160%;
+  font-weight: 400;
+  margin-top: 100px;
+  margin-bottom: 32px;
+}
+.doctorsSubtitle {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 44px;
+}
+.cardsWrap {
+  width: 1630px;
+  height: 438px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.doctorCards {
+  overflow: hidden;
+  width: 740px;
+  height: 200px;
+  border-radius: 4px;
+  display: flex;
+  box-shadow: 2px 4px 10px 2px rgba(0, 0, 0, 0.2);
+}
+.doctorImg {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+.doctorImg > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }

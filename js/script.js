@@ -8,7 +8,6 @@ $(document).ready(function () {
     speed: 800,
   });
 
-  // bottomSwiper는 역연출을 위해 초기 슬라이드를 마지막 인덱스로 설정
   const bottomSwiper = new Swiper("#bottomSwiper", {
     direction: "horizontal",
     slidesPerView: 1,
@@ -20,16 +19,23 @@ $(document).ready(function () {
   let currentIndex = 0;
 
   $("#fullpage").fullpage({
-    licenseKey: "OPEN-SOURCE-GPL-V3",
+    menu: "#menu",
     anchors: ["welcome", "aboutUs", "programs", "contact"],
     autoScrolling: true,
     fitToSection: true,
     scrollingSpeed: 700,
     css3: true,
-    // onLeave: 만약 #aboutUs(섹션 index 1)에서 currentIndex가 0이 아니라면 섹션 전환을 막음
     onLeave: function (origin, destination, direction) {
-      if (origin.index === 1 && currentIndex !== 0) {
-        return false;
+      // #aboutUs 섹션에서만 currentIndex를 기준으로 동작
+      if (origin.index === 1) {
+        // 아래로 이동 시 currentIndex가 totalSlides에 도달해야 섹션 전환 허용
+        if (direction === "down" && currentIndex !== totalSlides) {
+          return false;
+        }
+        // 위로 이동 시 currentIndex가 0이어야 섹션 전환 허용
+        if (direction === "up" && currentIndex !== 0) {
+          return false;
+        }
       }
       return true;
     },
@@ -38,7 +44,7 @@ $(document).ready(function () {
   // 메뉴가 제 기능 수행하게 하기..
   $("#menu li a").on("click", function (e) {
     e.preventDefault();
-    var anchor = $(this).attr("href").substring(1);
+    var anchor = $(this).attr("href").substring(1); // # 제거
     // index.html 상 섹션 순서 (0-based):
     // 0: Welcome, 1: About us, 2: values, 3: doctors, 4: Programs, 5: Contact, 6: 파트너
     if (anchor === "welcome") {
@@ -52,43 +58,40 @@ $(document).ready(function () {
     }
   });
 
-  // #aboutUs 섹션에 진입하면 초기 상태를 설정 (topSwiper는 0번, bottomSwiper는 마지막 슬라이드)
-  $(document).on("afterLoad", function (event, origin, destination, direction) {
+  // #aboutUs 섹션에 진입하면 초기화
+  $(document).on("afterLoad", function (event, origin, destination) {
     if (destination.index === 1) {
-      // #aboutUs 섹션
-      isInSwiper = true;
       currentIndex = 0;
       topSwiper.slideTo(0, 0, false);
-      // bottomSwiper는 initialSlide 옵션에 의해 이미 마지막 슬라이드가 보임
       fullpage_api.setAllowScrolling(false);
     } else {
       fullpage_api.setAllowScrolling(true);
     }
   });
 
-  // #aboutUs 내에서 휠 이벤트 처리: 슬라이드 전환 및 섹션 이동
-  $("#aboutUs").on("wheel", function (e) {
+  // #section-aboutUs 내 휠 이벤트 처리
+  $("#section-aboutUs").on("wheel", function (e) {
     e.preventDefault();
     e.stopPropagation();
 
     const delta = e.originalEvent.deltaY;
 
     if (delta > 0 && currentIndex < totalSlides) {
+      // 아래로 스크롤 -> 슬라이드 전환
       currentIndex++;
       topSwiper.slideTo(currentIndex);
       bottomSwiper.slideTo(totalSlides - currentIndex);
     } else if (delta < 0 && currentIndex > 0) {
+      // 위로 스크롤 -> 슬라이드 전환
       currentIndex--;
       topSwiper.slideTo(currentIndex);
       bottomSwiper.slideTo(totalSlides - currentIndex);
     } else if (delta > 0 && currentIndex === totalSlides) {
-      // 마지막 슬라이드에서 아래로 스크롤 시 → 다음 섹션 (#values)로 이동
-      isInSwiper = false;
+      // 마지막 슬라이드에서 아래로 스크롤 -> 다음 섹션으로 이동
       fullpage_api.setAllowScrolling(true);
       fullpage_api.moveSectionDown();
     } else if (delta < 0 && currentIndex === 0) {
-      // 첫 슬라이드에서 위로 스크롤 시 → 이전 섹션 (#welcome)로 이동
-      isInSwiper = false;
+      // 첫 슬라이드에서 위로 스크롤 -> 이전 섹션으로 이동
       fullpage_api.setAllowScrolling(true);
       fullpage_api.moveSectionUp();
     }
