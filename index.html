@@ -44,11 +44,11 @@
     <!-- 헤더 -->
     <header id="header">
       <div class="headerWrapper">
-        <a class="logo" href="index.html">
-          <img src="img/logo_h.svg" alt="logo" />
-        </a>
+        <a class="logo" href="index.html"></a>
         <nav class="menu">
-          <div class="progress-bar"></div>
+          <div class="progress-container">
+            <div class="progress-bar"></div>
+          </div>
           <ul id="menu" class="navi">
             <li><a href="#welcome">Welcome</a></li>
             <li><a href="#aboutUs">About us</a></li>
@@ -271,7 +271,7 @@
         class="section sec5"
         data-anchor="programs"
       >
-        <aside class="progrmasTitle">
+        <aside class="programsTitle">
           <h2>교육<br />프로그램<br />소개</h2>
           <p>
             굿독이 설계하고<br />직접 진행하는<br />트레이닝 프로그램은<br />견주와
@@ -279,96 +279,107 @@
             선사합니다.
           </p>
         </aside>
-        <div class="programsContainer">
-          <div class="programsList">
-            <div class="programDetail p1">
+        <div id="programsContainer" class="swiper-container">
+          <div class="swiper-wrapper programsList">
+            <div class="swiper-slide programDetail p1">
               <div class="programDarker">
                 <h2>(1) 입문 프로그램: 퍼피 스텝</h2>
-                <ul>
-                  <li>대상: 생후 2~6개월 자견과 초보 견주</li>
-                  <li>
-                    내용: 사회화 훈련, 올바른 배변·식습관 형성, 산책 매너, 기본
-                    복종 훈련
-                  </li>
-                  <li>
-                    특징: 짧은 이론 강의 후 즉각적인 실습, 보호자와 강아지의
-                    눈높이에 맞춘 체험 수업
-                  </li>
-                </ul>
+                <div class="detailDarker">
+                  <ul>
+                    <li>대상: 생후 2~6개월 자견과 초보 견주</li>
+                    <li>
+                      내용: 사회화 훈련, 올바른 배변·식습관 형성, 산책 매너,
+                      기본 복종 훈련
+                    </li>
+                    <li>
+                      특징: 짧은 이론 강의 후 즉각적인 실습, 보호자와 강아지의
+                      눈높이에 맞춘 체험 수업
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <div class="programDetail p2">
+            <div class="swiper-slide programDetail p2">
               <div class="programDarker">
                 <h2>(2) 문제행동 교정 프로그램: 행동 클리닉</h2>
-                <ul>
-                  <li>
-                    대상: 짖음, 분리불안, 공격성 등 특정 문제행동을 겪는 반려견
-                  </li>
-                  <li>
-                    내용: 1:1 행동 진단 → 맞춤형 교정 훈련 → 진행 상황에 따른
-                    상담 및 피드백
-                  </li>
-                  <li>
-                    특징: 수의사, 동물 행동 전문가가 함께 팀을 이뤄 근본 원인
-                    파악 후 솔루션 제시
-                  </li>
-                </ul>
+                <div class="detailDarker">
+                  <ul>
+                    <li>
+                      대상: 짖음, 분리불안, 공격성 등 특정 문제행동을 겪는
+                      반려견
+                    </li>
+                    <li>
+                      내용: 1:1 행동 진단 → 맞춤형 교정 훈련 → 진행 상황에 따른
+                      상담 및 피드백
+                    </li>
+                    <li>
+                      특징: 수의사, 동물 행동 전문가가 함께 팀을 이뤄 근본 원인
+                      파악 후 솔루션 제시
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <div class="programDetail p3">
+            <div class="swiper-slide programDetail p3">
               <div class="programDarker">
                 <h2>(3) 라이프스타일 맞춤 교육: 굿독 라이프</h2>
-                <ul>
-                  <li>
-                    대상: 반려견과의 일상을 좀 더 풍요롭게 꾸리고 싶은 견주
-                  </li>
-                  <li>
-                    내용: 산책 코스 기획 &amp; 바디랭귀지 분석/ 집 안 환경
-                    세팅(켄넬, 사료 배치 등)/ 놀이 기반 훈련
-                  </li>
-                  <li>
-                    특징: 각 가정 상황에 맞게 보호자가 쉽게 적용할 수 있는 실습
-                    위주
-                  </li>
-                </ul>
+                <div class="detailDarker">
+                  <ul>
+                    <li>
+                      대상: 반려견과의 일상을 좀 더 풍요롭게 꾸리고 싶은 견주
+                    </li>
+                    <li>
+                      내용: 산책 코스 기획 &amp; 바디랭귀지 분석/ 집 안 환경
+                      세팅(켄넬, 사료 배치 등)/ 놀이 기반 훈련
+                    </li>
+                    <li>
+                      특징: 각 가정 상황에 맞게 보호자가 쉽게 적용할 수 있는
+                      실습 위주
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <div class="programDetail p4">
+            <div class="swiper-slide programDetail p4">
               <div class="programDarker">
                 <h2>(4) 스페셜 클래스: 액티비티 &amp; 스포츠</h2>
-                <ul>
-                  <li>
-                    대상: 기본 복종 훈련을 완료하고, 추가 액티비티를 원하는
-                    반려견
-                  </li>
-                  <li>
-                    내용: 어질리티(Agillity), 프리스비, 플라이볼 등 기초
-                    기술부터 대회 준비까지
-                  </li>
-                  <li>
-                    특징: 주 1회 그룹 레슨 진행, 주차별 성과와 교정 포인트
-                    피드백 제공
-                  </li>
-                </ul>
+                <div class="detailDarker">
+                  <ul>
+                    <li>
+                      대상: 기본 복종 훈련을 완료하고, 추가 액티비티를 원하는
+                      반려견
+                    </li>
+                    <li>
+                      내용: 어질리티(Agillity), 프리스비, 플라이볼 등 기초
+                      기술부터 대회 준비까지
+                    </li>
+                    <li>
+                      특징: 주 1회 그룹 레슨 진행, 주차별 성과와 교정 포인트
+                      피드백 제공
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <div class="programDetail p5">
+            <div class="swiper-slide programDetail p5">
               <div class="programDarker">
                 <h2>(5) 온라인 세미나 &amp; 1:1 컨설팅</h2>
-                <ul>
-                  <li>
-                    대상: 지역적 제약으로 방문 교육이 어려운 견주, 추가 지도가
-                    필요한 반려견
-                  </li>
-                  <li>
-                    내용: 실시간 화상 레슨, SNS/커뮤니티를 통한 Q&amp;A 및 훈련
-                    영상 피드백
-                  </li>
-                  <li>
-                    특징: 시간·장소 제약 없이 진행 가능, 교육 이수 후에도 꾸준한
-                    지원
-                  </li>
-                </ul>
+                <div class="detailDarker">
+                  <ul>
+                    <li>
+                      대상: 지역적 제약으로 방문 교육이 어려운 견주, 추가 지도가
+                      필요한 반려견
+                    </li>
+                    <li>
+                      내용: 실시간 화상 레슨, SNS/커뮤니티를 통한 Q&amp;A 및
+                      훈련 영상 피드백
+                    </li>
+                    <li>
+                      특징: 시간·장소 제약 없이 진행 가능, 교육 이수 후에도
+                      꾸준한 지원
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -378,51 +389,48 @@
       <article id="section-contact" class="section sec6" data-anchor="contact">
         <!-- 고객문의 -->
         <div class="customerContact">
-          <div class="contactWrapper">
-            <div class="contactInfo">
-              <h2>굿독에게 물어보세요</h2>
-              <p>
-                교육 문의부터 굿독에 관해 궁금하신 사항까지,<br />굿독의 소통
-                창구는 24시간 열려 있습니다.
-              </p>
-              <div class="contactAddress">굿독 고객센터: 070-1212-2323</div>
-              <div class="contactAddress">info@gooddogac.com</div>
-              <div class="contactAddress">연중무휴 24시간 상담 가능</div>
-            </div>
-            <div class="contactForm">
-              <form
-                name="contactForm"
-                action="javascript:void(0);"
-                method="post"
+          <div class="contactInfo">
+            <h2>굿독에게 물어보세요</h2>
+            <p>
+              교육 문의부터 굿독에 관해 궁금하신 사항까지,<br />굿독의 소통
+              창구는 24시간 열려 있습니다.
+            </p>
+            <div class="contactAddress">굿독 고객센터: 070-1212-2323</div>
+            <div class="contactAddress">info@gooddogac.com</div>
+            <div class="contactAddress">연중무휴 24시간 상담 가능</div>
+          </div>
+          <div class="contactForm">
+            <form name="contactForm" action="javascript:void(0);" method="post">
+              <input id="name" name="name" type="text" placeholder="이름" />
+              <input
+                id="tel"
+                name="tel"
+                type="number"
+                placeholder="휴대폰 번호 11자리 입력 (- 제외)"
+              />
+              <input
+                id="email"
+                name="email"
+                type="text"
+                placeholder="이메일 주소 입력 (example@email.com)"
+              />
+              <textarea
+                id="askDetail"
+                name="detail"
+                type="text"
+                placeholder="문의 내용 상세 입력"
+              ></textarea>
+              <input
+                id="personalAgreed"
+                name="personalAgreed"
+                type="checkbox"
+              />
+              <label id="agreeLabel" for="personalAgreed"
+                ><a href="javascript:void(0);">개인정보 수집/이용</a>
+                동의</label
               >
-                <input name="name" type="text" placeholder="이름" />
-                <input
-                  name="tel"
-                  type="number"
-                  placeholder="휴대폰 번호 11자리 입력 (- 제외)"
-                />
-                <input
-                  name="email"
-                  type="text"
-                  placeholder="이메일 주소 입력 (example@email.com)"
-                />
-                <input
-                  name="detail"
-                  type="text"
-                  placeholder="문의 내용 상세 입력"
-                />
-                <input
-                  id="personalAgreed"
-                  name="personalAgreed"
-                  type="checkbox"
-                />
-                <label for="personalAgreed"
-                  ><a href="javascript:void(0);">개인정보 수집/이용</a>
-                  동의</label
-                >
-                <button class="btn" type="submit">문의하기</button>
-              </form>
-            </div>
+              <button class="btn" type="submit">문의하기</button>
+            </form>
           </div>
         </div>
       </article>
