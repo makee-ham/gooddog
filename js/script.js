@@ -7,14 +7,14 @@ $(document).ready(function () {
     direction: "horizontal",
     slidesPerView: 1,
     allowTouchMove: false,
-    speed: 800,
+    speed: 1000,
   });
 
   const bottomSwiper = new Swiper("#bottomSwiper", {
     direction: "horizontal",
     slidesPerView: 1,
     allowTouchMove: false,
-    speed: 800,
+    speed: 1000,
     initialSlide: totalStorySlides,
   });
 
@@ -23,7 +23,7 @@ $(document).ready(function () {
     direction: "vertical",
     slidesPerView: 1,
     allowTouchMove: false,
-    speed: 800,
+    speed: 1000,
   });
 
   let currentStoryIndex = 0;
@@ -55,7 +55,8 @@ $(document).ready(function () {
     anchors: ["welcome", "aboutUs", "programs", "contact"],
     autoScrolling: true,
     fitToSection: true,
-    scrollingSpeed: 700,
+    fitToSectionDelay: 1000,
+    scrollingSpeed: 800,
     css3: true,
     // onLeave가 섹션 이동할 때라 좀 콜백으로 할 게 많음
     // https://close-up.tistory.com/entry/fullPagejs-%EC%97%90%EC%84%9C-%ED%8A%B9%EC%A0%95-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EC%9D%BC-%EB%95%8C-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EC%9D%B4%EB%8F%99%ED%95%A0-%EB%95%8C-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0
@@ -134,6 +135,8 @@ $(document).ready(function () {
     },
   });
 
+  let isScrolling = false;
+
   // #aboutUs 섹션에 진입하면 초기화
   $(document).on("afterLoad", function (event, origin, destination) {
     if (destination.index === 1) {
@@ -149,6 +152,13 @@ $(document).ready(function () {
   $("#section-aboutUs").on("wheel", function (e) {
     e.preventDefault();
     e.stopPropagation();
+
+    if (isScrolling) return; // 스크롤 중이면 실행 안 함 (너무 빨리 전환되지 않게)
+    isScrolling = true; // 스크롤 막기
+
+    setTimeout(() => {
+      isScrolling = false; // 700ms 후 다시 스크롤 가능하게
+    }, 700);
 
     const delta = e.originalEvent.deltaY;
 
@@ -186,6 +196,13 @@ $(document).ready(function () {
   $("#section-programs").on("wheel", function (e) {
     e.preventDefault();
     e.stopPropagation();
+
+    if (isScrolling) return; // 스크롤 중이면 실행 안 함 (너무 빨리 전환되지 않게)
+    isScrolling = true; // 스크롤 막기
+
+    setTimeout(() => {
+      isScrolling = false; // 700ms 후 다시 스크롤 가능하게
+    }, 700);
 
     const delta = e.originalEvent.deltaY;
 
