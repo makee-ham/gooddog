@@ -1,0 +1,150 @@
+@media (max-width: 1440px) {
+  /* 헤더 */
+  #header {
+    height: 10vh;
+  }
+  #header.scrolled .logo {
+    width: 9vw;
+    height: 9vh;
+    margin-top: 0;
+    background-size: contain;
+    background-position: center;
+  }
+  header .headerWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .logo {
+    width: 40vw;
+    height: 70%;
+    background-size: contain;
+    background-position: center;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+  }
+  header .menu {
+    display: none;
+  }
+  header .sns {
+    width: 15vw;
+    top: 3vh;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header .sns img {
+    width: 60%;
+    object-fit: scale-down;
+    object-position: center;
+  }
+  header .sns li {
+    float: none;
+    width: 50%;
+    margin-left: 0;
+    margin-top: 0.5vh;
+  }
+  /* progress-bar */
+  .progress-sidebar {
+    display: block;
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+  }
+
+  .progress-sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .progress-sidebar li {
+    width: 12px;
+    height: 12px;
+    background: rgba(212, 212, 212, 0.8);
+    border-radius: 50%;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .progress-sidebar li.active {
+    background: #1e2a38;
+  }
+  /* Welcome */
+  #section-welcome .heroContainer .heroContent {
+    width: 80vw;
+    height: 40vh;
+    top: 50vh;
+    left: 10vw;
+    padding: 5vw 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #section-welcome .heroContainer .heroContent h1 {
+    font-size: 6vmin;
+  }
+  #section-welcome .heroContainer .heroContent p {
+    font-size: 4vmin;
+  }
+  #section-welcome .heroContainer .heroContent button {
+    box-sizing: content-box;
+    width: 40vw;
+    height: 80%;
+    font-size: 4vmin;
+    padding: 5px;
+  }
+  .scrollIndicator {
+    display: none;
+  }
+  /* 굿독 이야기 */
+  .topSwiper .swiper-slide {
+    padding: 0 10vw;
+    font-size: 5vmin;
+  }
+  /* 굿독의 3대 가치 */
+  #values {
+    padding: 10vw;
+    justify-content: space-around;
+  }
+  #values h2 {
+    font-size: 5vw;
+    margin-bottom: 0;
+  }
+  #values .valuesSubtitle {
+    font-size: 4vw;
+    margin-bottom: 0;
+  }
+  .valuesBG {
+    width: 95vw;
+    height: 30vh;
+    background: none;
+    flex-direction: column;
+    gap: 1vh;
+    overflow: hidden;
+  }
+  .valuesDetail {
+    width: 100%;
+    height: 8vh;
+  }
+  .valuesDetail h3 {
+    font-size: 5vw;
+  }
+  .valuesDetail p {
+    font-size: 4vw;
+  }
+  .valuesDetail ul {
+    display: none;
+  }
+  /* 굿독의 닥터들 */
+  #doctors {
+    padding: 10vw;
+  }
+}

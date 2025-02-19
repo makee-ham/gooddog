@@ -96,6 +96,9 @@ header .logo {
   background: url("../img/logo_h.svg") no-repeat;
   transition: all 0.5s ease;
 }
+.progress-sidebar {
+  display: none;
+}
 .progress-container {
   width: 542px;
   height: 60px;
@@ -328,7 +331,7 @@ header .sns li {
 .valuesBG {
   width: 1735px;
   height: 340px;
-  background: url(../img/values.png) no-repeat;
+  background: url("../img/values.png") no-repeat;
   display: flex;
   flex-direction: row;
   justify-content: center;

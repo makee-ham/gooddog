@@ -1,4 +1,13 @@
 $(document).ready(function () {
+  // 함수: 프로그래스 사이드바 active 상태 업데이트
+  function updateProgressSidebar(index) {
+    $(".progress-sidebar li").removeClass("active");
+    $(".progress-sidebar li").eq(index).addClass("active");
+  }
+
+  // 초기 active 설정 (첫 번째 섹션)
+  updateProgressSidebar(0);
+
   // 스와이퍼와 풀페이지를 동시에 쓰려는 노력
   const totalStorySlides = $("#topSwiper .swiper-slide").length - 1;
   const totalProgramSlides = $("#programsContainer .swiper-slide").length - 1;
@@ -131,8 +140,19 @@ $(document).ready(function () {
       // 메뉴 클릭 후 데이터 초기화
       $("body").data("menuClick", false);
 
+      // 1440px 이하일 때만 사이드바의 active 상태 업데이트
+      if ($(window).width() <= 1440) {
+        updateProgressSidebar(destination.index);
+      }
+
       return true;
     },
+  });
+
+  // 우측 프로그래스 사이드바 항목 클릭 시 해당 섹션으로 이동
+  $(".progress-sidebar li").on("click", function () {
+    var index = $(this).data("index");
+    fullpage_api.moveTo(index + 1);
   });
 
   let isScrolling = false;
